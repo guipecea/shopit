@@ -25,7 +25,7 @@ const ItemListContainer = ({greeting}) => {
         <>
             <h3>{greeting}</h3>
             <ItemList products={products}></ItemList>
-            <ItemCount initial={1} stock={0} onAdd={(quantity) => console.log("Cantidad agregada: ", quantity)}></ItemCount>
+            {/* <ItemCount initial={1} stock={0} onAdd={(quantity) => console.log("Cantidad agregada: ", quantity)}></ItemCount> */}
         </>
     )
 }

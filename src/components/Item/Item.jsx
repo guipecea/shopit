@@ -1,7 +1,7 @@
 import Button from 'react-bootstrap/Button';
 import Card from 'react-bootstrap/Card';
 
-const Item = ({id, name, img, price, stock, description}) => {
+const Item = ({id, name, img, price, stock}) => {
 
     return(
         <Card id={id}>
@@ -11,15 +11,10 @@ const Item = ({id, name, img, price, stock, description}) => {
                 {/* Esto funciona pues Card asumo que acepta childrens, que serian los 2 elementos de abajo */}
                 <p> Precio: {price}</p>
                 <p> Disponibilidad: {stock}</p>
-                <Card.Text>
-                    {description}
-                </Card.Text>
                 <Button variant="primary">Ver detalle</Button>
             </Card.Body>
         </Card>
     )
-
-
 }
 
 export default Item;
