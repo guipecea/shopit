@@ -40,7 +40,7 @@ const products = [
         name: 'Dell Latitude 1020',
         price: 100000,
         category: 'notebooks',
-        img: 'https://fdn.gsmarena.com/imgroot/news/22/02/samsung-galaxy-s22-hot-take/inline/-1200/gsmarena_007.jpg',
+        img: 'https://netpc.uy/wp-content/uploads/2023/03/1-47.jpg',
         stock: 2,
         description: 'Descripcion de Dell Latitude 1020'
     }
