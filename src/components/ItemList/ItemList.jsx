@@ -1,7 +1,6 @@
 import Col from 'react-bootstrap/Col';
 import Row from 'react-bootstrap/Row';
 import Item from "../Item/Item";
-import Card from 'react-bootstrap/Card';
 
 const ItemList = ({products}) => {
 

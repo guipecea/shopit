@@ -34,17 +34,16 @@ const products = [
         img: 'https://fdn.gsmarena.com/imgroot/news/22/02/samsung-galaxy-s22-hot-take/inline/-1200/gsmarena_007.jpg',
         stock: 25,
         description: 'Descripcion del Motorola Sb22'
+    },
+    {
+        id: '5',
+        name: 'Dell Latitude 1020',
+        price: 100000,
+        category: 'notebooks',
+        img: 'https://fdn.gsmarena.com/imgroot/news/22/02/samsung-galaxy-s22-hot-take/inline/-1200/gsmarena_007.jpg',
+        stock: 2,
+        description: 'Descripcion de Dell Latitude 1020'
     }
-    // ,
-    // {
-    //     id: '5',
-    //     name: 'Nokia 1100',
-    //     price: 1000,
-    //     category: 'cellphones',
-    //     img: 'https://fdn.gsmarena.com/imgroot/news/22/02/samsung-galaxy-s22-hot-take/inline/-1200/gsmarena_007.jpg',
-    //     stock: 2,
-    //     description: 'Descripcion del Nokia 1100'
-    // }
 
 ]
 export const getProducts = () => {
@@ -62,6 +61,17 @@ export const getProductById = (pid) => {
     return new Promise((resolve, reject) => {
         setTimeout(() => {
             resolve(products.find(prod => prod.id === pid))
+        },100)
+        // setTimeout(() => {
+        //     reject("Ocurrio un error al obtener los productos")
+        // },500)
+    })
+}
+
+export const getProductsByCategory = (catId) => {
+    return new Promise((resolve, reject) => {
+        setTimeout(() => {
+            resolve(products.find(prod => prod.category === catId))
         },100)
         // setTimeout(() => {
         //     reject("Ocurrio un error al obtener los productos")

@@ -1,5 +1,5 @@
-import Button from 'react-bootstrap/Button';
 import Card from 'react-bootstrap/Card';
+import { Link } from 'react-router-dom';
 
 const Item = ({id, name, img, price, stock}) => {
 
@@ -11,8 +11,11 @@ const Item = ({id, name, img, price, stock}) => {
                 {/* Esto funciona pues Card asumo que acepta childrens, que serian los 2 elementos de abajo */}
                 <p> Precio: {price}</p>
                 <p> Disponibilidad: {stock}</p>
-                <Button variant="primary">Ver detalle</Button>
+                {/* <Button variant="primary">Ver detalle</Button> */}
             </Card.Body>
+            <Card.Footer>
+                <Link to={`/item/${id}`}>Ver detalle</Link>
+            </Card.Footer>
         </Card>
     )
 }
