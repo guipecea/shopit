@@ -71,7 +71,7 @@ export const getProductById = (pid) => {
 export const getProductsByCategory = (catId) => {
     return new Promise((resolve, reject) => {
         setTimeout(() => {
-            resolve(products.find(prod => prod.category === catId))
+            resolve(products.filter(prod => prod.category === catId))
         },100)
         // setTimeout(() => {
         //     reject("Ocurrio un error al obtener los productos")
