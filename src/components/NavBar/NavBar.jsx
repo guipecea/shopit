@@ -1,3 +1,4 @@
+import { NavLink } from 'react-router-dom';
 import Container from 'react-bootstrap/Container';
 import Nav from 'react-bootstrap/Nav';
 import Navbar from 'react-bootstrap/Navbar';
@@ -8,18 +9,16 @@ const NavBar = () => {
   return (
     <Navbar bg="light" expand="lg">
       <Container>
-        <Navbar.Brand href="/">ShopIt</Navbar.Brand>
+        <NavLink className="navbar-brand" to="/">ShopIt</NavLink>
         <Navbar.Toggle aria-controls="basic-navbar-nav" />
         <Navbar.Collapse id="basic-navbar-nav">
           <Nav className="me-auto">
-            <Nav.Link href="/news">News</Nav.Link>
+            <NavLink className="nav-link" aria-current="page" to="/news">News</NavLink>
             <NavDropdown title="Categories" id="basic-nav-dropdown">
-              <NavDropdown.Item href="/category/cellphones">Celulares</NavDropdown.Item>
-              <NavDropdown.Item href="/category/notebooks">Notebooks</NavDropdown.Item>
-              {/* <NavDropdown.Divider />
-              <NavDropdown.Item href="#action/3.4">Separated link</NavDropdown.Item> */}
+              <NavLink className="dropdown-item" to="/category/cellphones">Celulares</NavLink>
+              <NavLink className="dropdown-item" to="/category/notebooks">Notebooks</NavLink>
             </NavDropdown>
-            <Nav.Link href="/about">About us</Nav.Link>            
+            <NavLink className="nav-link" aria-current="page" to="/about">About Us</NavLink>
           </Nav>
         </Navbar.Collapse>
 
