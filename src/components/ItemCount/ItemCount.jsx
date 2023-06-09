@@ -25,12 +25,12 @@ const ItemCount = ({stock, initial, onAdd}) => {
     return (
         <div>
             <ButtonGroup aria-label="Basic example">
-                <Button variant="secondary" onClick={() => decrement()}>-</Button>
-                    <h4>{quantity}</h4>
-                <Button variant="secondary" onClick={() => increment()}>+</Button>
+                <Button style={{marginRight: '0.5vw'}} variant="secondary" onClick={() => decrement()}>-</Button>
+                    <h4>{quantity}</h4>{''}
+                <Button style={{marginLeft: '0.5vw'}} variant="secondary" onClick={() => increment()}>+</Button>
             </ButtonGroup>
             <ButtonGroup aria-label="Basic example">
-                <Button variant="secondary" disabled={!stock} onClick={() => onAdd(quantity)}>Agregar al carrito</Button>
+                <Button style={{marginLeft: '1vw'}} variant="secondary" disabled={!stock} onClick={() => onAdd(quantity)}>Agregar al carrito</Button>
             </ButtonGroup>
         </div>                
     )

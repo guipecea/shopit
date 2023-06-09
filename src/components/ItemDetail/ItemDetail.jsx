@@ -3,6 +3,7 @@ import Card from 'react-bootstrap/Card';
 import ItemCount from '../ItemCount/ItemCount';
 import { useContext, useState } from 'react';
 import { CartContext } from '../../context/CartContext';
+import Button from 'react-bootstrap/Button';
 
 const ItemDetail = ({id, name, img, price, stock, description}) => {
 
@@ -33,7 +34,9 @@ const ItemDetail = ({id, name, img, price, stock, description}) => {
             </Card.Body>
             <Card.Footer>
                 { quantityAdded > 0 ? (
-                        <Link to='/cart'>Terminar Compra</Link>
+                        <Link to='/cart'>
+                            <Button variant="secondary">Terminar Compra</Button>
+                        </Link>
                     ) : (
                         <ItemCount initial={1} stock={5} onAdd={handleOnAdd}></ItemCount>
                     )

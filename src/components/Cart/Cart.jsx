@@ -1,3 +1,5 @@
+import ButtonGroup from 'react-bootstrap/ButtonGroup';
+import Button from 'react-bootstrap/Button';
 import { useContext } from "react"
 import { Link } from "react-router-dom"
 import { CartContext } from "../../context/CartContext"
@@ -7,11 +9,13 @@ const Cart = () => {
 
     const {cart , clearCart, totalQuantity, total} = useContext(CartContext)
 
-    if (totalQuantity === 0){
+    if (totalQuantity() === 0){
         return (
             <div>
                 <h1>No hay items en el carrito</h1>
-                <Link to='/'>Productos</Link>
+                <Link to='/'>
+                    <Button style={{marginTop: '0.5vw'}} variant="secondary">Productos</Button>
+                </Link>
             </div>
         )
     }
@@ -20,8 +24,12 @@ const Cart = () => {
         <div>
             {/* { cart.map (p => <CartItem key={p.id} {...p}/>) } */}
             <h3>Total: ${ total() }</h3>
-            <button onClick={() => clearCart()}>Limpiar Carrito</button>
-            <Link to='/checkout'>Checkout</Link>
+            <ButtonGroup vertical>
+                <Button variant="secondary" onClick={() => clearCart()}>Limpiar Carrito</Button>
+                <Link to='/checkout'>
+                    <Button style={{marginTop: '0.5vw'}} variant="secondary">Checkout</Button>
+                </Link>
+            </ButtonGroup>
         </div>
     )
 
