@@ -1,7 +1,9 @@
 import { useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
 
-import { getProducts, getProductsByCategory } from "../asyncMock";
+import { getDocs , collection, query, where } from "firebase/firestore"
+import { db } from "../../services/firebase/firebaseConfig"
+
 import ItemList from "../ItemList/ItemList";
 
 const ItemListContainer = ({greeting}) => {
@@ -13,14 +15,18 @@ const ItemListContainer = ({greeting}) => {
     const { id } = useParams();
 
     useEffect( () => {   
-        const asyncFunc = id ? getProductsByCategory : getProducts
-        
-        asyncFunc(id)
+        const asyncFunc = id ? query(collection(db,'product'), where ('category', '==', id)) : collection(db, 'product')
+
+        getDocs(asyncFunc)
             .then(response => {
-                setProducts(response);
+                const prods = response.docs.map(doc => {
+                    const data = doc.data()
+                    return { id: doc.id, ...data }
+                })
+                setProducts(prods)
             })
             .catch(error => {
-                console.error(error);
+                console.log("Ocurrio un error al obtener los productos " + error)
             })
     }, [id])
 
