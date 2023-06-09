@@ -1,0 +1,7 @@
+img.card-img-top{ 
+    display: block; 
+    margin: 2vw; 
+    /* padding: 6vw; */
+    width: 20vw; 
+    height: 20vw;
+}  
