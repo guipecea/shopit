@@ -38,7 +38,7 @@ const ItemDetail = ({id, name, img, price, stock, description}) => {
                             <Button variant="secondary">Terminar Compra</Button>
                         </Link>
                     ) : (
-                        <ItemCount initial={1} stock={5} onAdd={handleOnAdd}></ItemCount>
+                        <ItemCount initial={1} stock={stock} onAdd={handleOnAdd}></ItemCount>
                     )
                 }
             </Card.Footer>
